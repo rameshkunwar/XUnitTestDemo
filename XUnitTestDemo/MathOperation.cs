@@ -25,6 +25,14 @@ namespace XUnitTestDemo
             return number1 / number2;
         }
 
+        public static int Minimum(int a, int b, int c)
+        {
+            int min = a;
+            if (min > b) min = b;
+            if (min > c) min = c;
+            return min;
+        }
+
         public static Guid ConvertStringToGuid(this string id)
         {
             if (Guid.TryParse(id, out Guid idAsGuid))

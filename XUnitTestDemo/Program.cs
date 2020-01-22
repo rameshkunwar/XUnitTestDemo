@@ -18,6 +18,10 @@ namespace XUnitTestDemo
 
             Console.WriteLine(guidId);
 
+            var min = MathOperation.Minimum(6, 7, 8);
+
+            Console.WriteLine("minimum: " + min);
+
             Console.ReadLine();
         }
     }

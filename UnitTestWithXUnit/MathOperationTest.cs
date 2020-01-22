@@ -38,5 +38,18 @@ namespace UnitTestWithXUnit
             //Assert
             Assert.Equal(expectedValue, guid);
         }
+
+        [Fact]
+        public void TestMinimum()
+        {
+            //arrange
+            int a = 6; int b = 7; int c = 8;
+            var expectedValue = 6;
+            //act
+            var min = MathOperation.Minimum(a, b, c);
+
+            //assert
+            Assert.Equal(expectedValue,min);
+        }
     }
 }
