@@ -23,7 +23,7 @@ namespace XUnitTestDemo
 
             Console.WriteLine("minimum: " + min);
 
-           // Console.ReadLine();
+            // Console.ReadLine();
 
             var config = new MapperConfiguration(cfg => cfg.AddProfile<SamlingMappingProfile>());
             var mapper = config.CreateMapper();
@@ -40,9 +40,15 @@ namespace XUnitTestDemo
                 SearchResultReadOnly = searchResultReadOnly
             };
 
+            PostItReadOnly postIt = new PostItReadOnly()
+            {
+                Id = 100,
+                PostItText = "this is some example text"
+            };
+
             var samList = new List<SamlingReadOnlyModel> { sam,
                 new SamlingReadOnlyModel { Id = 3, Name="hello", SearchResultReadOnly =
-                new List<SearchResultReadOnly> { new SearchResultReadOnly { Id=5, Headline="this is another" } } }};
+                new List<SearchResultReadOnly> { new SearchResultReadOnly { Id=5, Headline="this is another", PostItReadOnly = postIt } } }};
 
             var destination = mapper.Map<List<SamlingDto>>(samList);
 

@@ -14,7 +14,12 @@ namespace XUnitTestDemo
             CreateMap<SamlingReadOnlyModel, SamlingDto>()
                 .ForMember(model => model.SearchResultDto, conf => conf.MapFrom(model => model.SearchResultReadOnly));
 
-            CreateMap<SearchResultReadOnly, SearchResultDto>();
+            CreateMap<PostItReadOnly, PostItDto>();
+
+            CreateMap<SearchResultReadOnly, SearchResultDto>()
+                .ForMember(model => model.postItDto, conf => conf.MapFrom(model => model.PostItReadOnly));
+
+            
         }
     }
 }

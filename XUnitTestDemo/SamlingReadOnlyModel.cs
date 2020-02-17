@@ -28,11 +28,25 @@ namespace XUnitTestDemo
     {
         public int Id { get; set; }
         public string Headline { get; set; }
+        public PostItReadOnly PostItReadOnly { get; set; }
     }
 
     public class SearchResultDto
     {
         public int Id { get; set; }
         public string Headline { get; set; }
+        public PostItDto postItDto { get; set; }
+    }
+
+    public class PostItReadOnly
+    {
+        public int Id { get; set; }
+        public string PostItText { get; set; }
+    }
+
+    public class PostItDto
+    {
+        public int Id { get; set; }
+        public string PostItText { get; set; }
     }
 }
